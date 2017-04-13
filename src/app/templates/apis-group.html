@@ -1,0 +1,110 @@
+<!--<h1>Hello {{name}}</h1>
+  <p><strong>Email</strong>:  {{email}}</p>
+  <p><strong>Address</strong>:  {{address.street}}</p>
+  <p><strong>stree</strong>:  {{address.city}}</p>
+  <p><strong>Pin code</strong>:  {{address.pin}}</p>
+  <button (click)="toggleHobbies()">Show Hobbies</button>
+  <div *ngIf="showHobbies">
+      <h3>Hobbies</h3>
+      <ul>
+      <li *ngFor="let hobby of hobbies">
+      {{hobby}}
+      </li>
+      </ul>
+  </div>
+  <form>
+    <label> Name: </label><br />
+    <input type="text" name="name" [(ngModel)]="name">
+  </form>
+  <hr/>-->
+  
+<!--<div id="apisPage">
+  <div class="container-fluid">
+  <div class="row content">
+      <div class="col-md-3 sidenav">
+        <h3>Apis Group</h3>
+        <div class="col-md-12" *ngFor = "let api of apis" >
+          <div class="col-md-1">
+            <span src="app/images/apiIcon.svg"></span>
+          </div>
+          <div class="col-md-2">
+            <p>{{api.name}}</p>
+            
+        </div>
+          
+        </div>
+    </div>
+    <div class="col-md-7"></div>
+  </div>
+  </div>
+</div>-->
+ 
+<div class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col menu_fixed">
+          <div class="left_col scroll-view">
+            
+            <div class="clearfix"></div>
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>APIs Group</h3>
+                <ul class="nav side-menu">
+                  <li *ngFor="let group of apiGroups"><a (click)="toggleSideMenu(group)" name="{{group}}"><i class="fa  fa-book"></i>{{group}} <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu"  id="SubMenu_+{{group}}">
+                      <li *ngFor="let api of apis">
+                        <a *ngIf="api.group==group"  (click)="onSelect(api)"  >{{api.name}}</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              
+            </div>
+            <!-- /sidebar menu -->
+          </div>
+        </div>
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <router-outlet></router-outlet>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Apis Group
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+  </div>
+
+
+<!--<div id="apisPage">
+<div class="sidebar-nav">
+    <div class="well" style="width:300px; padding: 8px 0;">
+		<ul class="nav nav-list"> 
+		  <li class="nav-header">Admin Menu</li>        
+		  <li><a href="index"><i class="icon-home"></i> Dashboard</a></li>
+          <li><a href="#"><i class="icon-envelope"></i> Messages <span class="badge badge-info">4</span></a></li>
+          <li><a href="#"><i class="icon-comment"></i> Comments <span class="badge badge-info">10</span></a></li>
+		  <li class="active"><a href="#"><i class="icon-user"></i> Members</a></li>
+          <li class="divider"></li>
+		  <li><a href="#"><i class="icon-comment"></i> Settings</a></li>
+		  <li><a href="#"><i class="icon-share"></i> Logout</a></li>
+		</ul>
+	</div>
+</div>
+</div>    -->

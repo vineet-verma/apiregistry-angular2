@@ -1,0 +1,80 @@
+[ {
+  "name" : "NotificationRouter",
+  "title" : "Mail Notification API",
+  "description" : "Exposes REST endpoint for sending mail notifications.",
+  "url" : "http://dbdbdbjbdjbd.com",
+  "tags" : [ "Notification", "notification", "router", "email" ],
+  "group" : "Notification",
+  "operations" : [ {
+    "method" : "post",
+    "path" : "/mail",
+    "summary" : "Sends mail for as per incoming notification",
+    "description" : "Simply sends the mail for the incoming message"
+  } ]
+},
+{
+  "name" : "NotificationStore",
+  "title" : "Mail Notification API",
+  "description" : "Exposes REST endpoint for sending store notifications.",
+  "url" : "http://dbdbdbjbdjsdafdsfbd.com",
+  "tags" : [ "Notification", "notification", "store", "email" ],
+  "group" : "Notification",
+  "operations" : [ {
+    "method" : "post",
+    "path" : "/store",
+    "summary" : "Sends mail for as per incoming notification",
+    "description" : "Simply sends the mail for the incoming message"
+  } ]
+},
+{
+  "name" : "NotificationMail",
+  "title" : "Mail Notification API",
+  "description" : "Exposes REST endpoint for sending mail notifications.",
+  "url" : "http://dbdbdsdfbjbdjbd.com",
+  "tags" : [ "Notification", "notification", "mail", "email" ],
+  "group" : "Notification",
+  "operations" : [ {
+    "method" : "post",
+    "path" : "/mail",
+    "summary" : "Sends mail for as per incoming notification",
+    "description" : "Simply sends the mail for the incoming message"
+  } ]
+}, {
+  "name" : "UserPreference",
+  "title" : "User Preferences API",
+  "description" : "Exposes REST endpoint for managing user preferences",
+  "url" : "http://dbdbdbjbdjbd.com",
+  "tags" : [ "user preferences", "preference", "preferences", "user" ],
+  "group" : "User Preferences",
+  "operations" : [ {
+    "method" : "post",
+    "path" : "/preferences/v1/{appName}/{preferenceName}",
+    "summary" : "Create user preference",
+    "description" : "Creates an user preference with the given preferenceName for the application identified by appName. Updates the preference if already exist"
+  }, {
+    "method" : "get",
+    "path" : "/preferences/v1/{appName}/{preferenceName}",
+    "summary" : "Fetch user preference",
+    "description" : "Fetch an user preference with the given preferenceName for the application identified by appName."
+  }, {
+    "method" : "delete",
+    "path" : "/preferences/v1/{appName}/{preferenceName}",
+    "summary" : "Delete user preference",
+    "description" : "Delete an user preference with the given preferenceName for the application identified by appName."
+  }, {
+    "method" : "post",
+    "path" : "/preferences/v1/{appName}",
+    "summary" : "Create bulk preferences",
+    "description" : "Create bulk preferences"
+  }, {
+    "method" : "get",
+    "path" : "/preferences/v1/{appName}",
+    "summary" : "Fetch all preference names or complete preferences details",
+    "description" : "Fetch all preferences details if summray param is false else fetch all preferences names as summary."
+  }, {
+    "method" : "delete",
+    "path" : "/preferences/v1/{appName}",
+    "summary" : "Delete selective or all preference for an app",
+    "description" : "Delete selective or all preference for an app. For all provide * as preferenceName"
+  } ]
+} ]
