@@ -16,7 +16,16 @@
         <div class="col-md-3 left_col menu_fixed">
           <div class="left_col scroll-view">
             
-            <div class="clearfix"></div>
+            <div class="clearfix">
+              
+                <div class="input-append span12">
+                    <input type="text" class="search-query" placeholder="Search API Name"
+                    [(ngModel)]="searchApiName"
+                    (keypress)="searchValueChange(searchApiName)">
+                   
+                </div>
+           
+            </div>
             <br />
 
            

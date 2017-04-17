@@ -1,21 +1,54 @@
-
 <div class="nav-md">
-    <div class="container body">
-      <div class="main_container">
-         <div *ngIf="apiData">
-            <h3>{{ apiData.title }}</h3>
-            <div>
-              <div class="row">
-                <div class="well">
-                  {{apiData.description}}
-                </div>
-              </div>
-              <label>Id: </label>{{ apiData.name }}
-              
-          </div>
-          
+   <div class="container body ">
+      <div class="main_container ">
+         <div *ngFor="let api of apiDataByApiName">
+            <div *ngIf="api">
+               <h3>{{ api.title }}</h3>
+               <div class="row">
+                  <div class="row">
+                     <div class="well">
+                        <p>{{api.description}}</p>
+                     <br/><span> URL : </span><a class="url-link" target="_blank" href="{{api.url}}" ><i> {{api.url}}</i></a>
+                     </div>
+                     
+                  </div>
+                  <h3>Operations : </h3>
+                  <div class="row clearfix tableClass" id="style-3">
+                  <table class="table jambo_table col-md-12">
+                     <thead>
+                        <tr>
+                           <th>Operation Nme</th>
+                           <th>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody  *ngFor="let ops of api.operations" [ngStyle]="{'background-color': getbodyColor(ops.method)}">
+                        
+                        <tr  >
+                           <td>Method</td>
+                           <td><span class="methodDefault" [ngStyle]="{'background-color': getRandomColor(ops.method)}">{{ops.method}}</span></td>
+                        </tr>
+                        <tr >
+                           <td>Path</td>
+                           <td class="operationsPath">{{ops.path}}</td>
+                        </tr>
+                        <tr >
+                           <td>Summary</td>
+                           <td class="operationsPath"> {{ops.summary}}</td>
+                        </tr>
+                        <tr >
+                           <td>Description</td>
+                           <td class="operationsPath">{{ops.description}}</td>
+                        </tr>
+                        <tr class="divider" style="background-color:white;">
+                           <td></td>
+                           <td></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
-        </div>
-      </div>
-    </div>
-
+   </div>
+</div>

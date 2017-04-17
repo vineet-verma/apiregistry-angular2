@@ -5,12 +5,14 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Observable }            from 'rxjs/Observable';
 
 import { Apis,Crisis, CrisisService } from './crisis.service';
+import {StorageService} from '../services/storage.service';
 
 @Component({
   templateUrl: 'app/templates/apis-group.html',
   
 })
 export class CrisisListComponent implements OnInit {
+  searchApiName: string ;
   crises: Observable<Crisis[]>;
   //apis: Observable<Apis[]>;
   private apis:Apis[] = [];
@@ -25,12 +27,14 @@ export class CrisisListComponent implements OnInit {
   constructor(
     private service: CrisisService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private StorageService:StorageService
   ) {
     this.apiGroups = [];
 
     this.service.getApis().subscribe(apis => {
                this.apis = apis
+               StorageService.setApisData(apis);
   for (var i = 0; i < this.apis.length; i++) {
     if(this.apiGroups.indexOf(this.apis[i].group)===-1){
         this.apiGroups.push(this.apis[i].group);
@@ -63,8 +67,24 @@ export class CrisisListComponent implements OnInit {
     this.router.navigate([api.name], { relativeTo: this.route });
   }
 
+searchValueChange(search:string){
+  let filtered = [];
+ 
+  this.searchApiName = search;
+   if (this.searchApiName && this.searchApiName.length) {
+      for (var i = 0; i < this.apis.length; i++) {
+        if (this.apis[i].name.toLowerCase().indexOf(this.searchApiName.toLowerCase()) >= 0
+          || this.apis[i].group.toLowerCase().indexOf(this.searchApiName.toLowerCase()) >= 0)
+                        filtered.push(this.apis[i]);
+      }
 
+    this.apis = filtered;
+  }else{
+    
+  }
 
+  
+}
   toggleSideMenu(group:string){
   
    this.showSubMenu = !this.showSubMenu;

@@ -16,7 +16,7 @@ import { LoginComponent }          from './login.component';
 import { PageNotFoundComponent }   from './not-found.component';
 
 import { DialogService }           from './dialog.service';
-
+import {StorageService} from './services/storage.service';
 
 @NgModule({
   imports: [
@@ -32,9 +32,11 @@ import { DialogService }           from './dialog.service';
     ComposeMessageComponent,
     LoginComponent,
     PageNotFoundComponent
+    
   ],
   providers: [
-    DialogService
+    DialogService,
+    StorageService
   ],
   bootstrap: [ AppComponent ]
 })

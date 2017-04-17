@@ -2,7 +2,7 @@
   "name" : "NotificationRouter",
   "title" : "Mail Notification API",
   "description" : "Exposes REST endpoint for sending mail notifications.",
-  "url" : "http://dbdbdbjbdjbd.com",
+  "url" : "http://notificationemailapi.mkt-platform.a1.mdevlab.com/",
   "tags" : [ "Notification", "notification", "router", "email" ],
   "group" : "Notification",
   "operations" : [ {
@@ -14,9 +14,9 @@
 },
 {
   "name" : "NotificationStore",
-  "title" : "Mail Notification API",
+  "title" : "Store Notification API",
   "description" : "Exposes REST endpoint for sending store notifications.",
-  "url" : "http://dbdbdbjbdjsdafdsfbd.com",
+  "url" : "http://notificationstore.mkt-platform.a1.mdevlab.com/",
   "tags" : [ "Notification", "notification", "store", "email" ],
   "group" : "Notification",
   "operations" : [ {
@@ -28,14 +28,14 @@
 },
 {
   "name" : "NotificationMail",
-  "title" : "Mail Notification API",
+  "title" : "Router Notification API",
   "description" : "Exposes REST endpoint for sending mail notifications.",
-  "url" : "http://dbdbdsdfbjbdjbd.com",
+  "url" : "http://notificationrouter.mkt-platform.a1.mdevlab.com",
   "tags" : [ "Notification", "notification", "mail", "email" ],
   "group" : "Notification",
   "operations" : [ {
     "method" : "post",
-    "path" : "/mail",
+    "path" : "/router",
     "summary" : "Sends mail for as per incoming notification",
     "description" : "Simply sends the mail for the incoming message"
   } ]
@@ -43,7 +43,7 @@
   "name" : "UserPreference",
   "title" : "User Preferences API",
   "description" : "Exposes REST endpoint for managing user preferences",
-  "url" : "http://dbdbdbjbdjbd.com",
+  "url" : "http://user-preferences.mkt-platform.a1.mdevlab.com/",
   "tags" : [ "user preferences", "preference", "preferences", "user" ],
   "group" : "User Preferences",
   "operations" : [ {
