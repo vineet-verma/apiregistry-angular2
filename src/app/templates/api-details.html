@@ -1,0 +1,21 @@
+
+<div class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+         <div *ngIf="apiData">
+            <h3>{{ apiData.title }}</h3>
+            <div>
+              <div class="row">
+                <div class="well">
+                  {{apiData.description}}
+                </div>
+              </div>
+              <label>Id: </label>{{ apiData.name }}
+              
+          </div>
+          
+      </div>
+        </div>
+      </div>
+    </div>
+
